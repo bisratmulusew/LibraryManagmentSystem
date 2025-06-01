@@ -19,6 +19,7 @@ private:
 public:
     void searchBook();
     void deleteBook();
+    
 };
 
 #endif
