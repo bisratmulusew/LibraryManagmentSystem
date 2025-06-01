@@ -5,6 +5,7 @@
 #include <vector>
 
 struct Book {
+    
     std::string ISBN;
     std::string title;
     std::string author;
