@@ -23,6 +23,7 @@ void addMember() {
     cout << "Member added successfully!\n";
 }
 
+
 void addMember(const Member& member) {
     members.push_back(member);
     cout << "Member added successfully!\n";
