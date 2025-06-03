@@ -22,9 +22,9 @@ struct Member {
 void addMember(); 
 void addMember(const Member& member); 
 void editMember(); 
-void editMember(int id, const std::string& newName, const std::string& newContact, MembershipType newType); 
+void editMember(int id, const string& newName, const string& newContact, MembershipType newType); 
 void displayAllMembers();
-std::string membershipTypeToString(MembershipType type);
-MembershipType stringToMembershipType(const std::string& str);
+string membershipTypeToString(MembershipType type);
+MembershipType stringToMembershipType(const string& str);
 
 #endif 
