@@ -1,15 +1,31 @@
 #include "book_management.h"
 #include <iostream>
-#include <algorithm> 
 using namespace std;
 
-book::book(string t, string g) {
-    title = t;
-    genre = g;
+string genreToString(Genre genre) {
+    switch (genre) {
+        case FICTION: return "Fiction";
+        case NONFICTION: return "Non-Fiction";
+        case SCIENCE: return "Science";
+        case HISTORY: return "History";
+        case OTHER: return "Other";
+        default: return "Unknown";
+    }
 }
-
-void BookCategoryManagment(vector<book>& books) {
-    sort(books.begin(), books.end(), [](const book& a, const  book& b) {
-        return a.genre < b.genre;
-    });
+void BookCategoryManagement(const vector<Book>& books) {
+    cout << "Books Organized by Genre:\n";
+    for (int g = 0; g < GENRE_COUNT; g++) {
+        Genre genre = static_cast<Genre>(g);
+        cout << "\n[" << genreToString(genre) << "]\n";
+        bool found = false;
+        for (const auto& book : books) {
+            if (book.genre == genre) {
+                cout << " - " << book.title << endl;
+                found = true;
+            }
+        }
+        if (!found) {
+            cout << " (No books in this category)\n";
+        }
+    }
 }

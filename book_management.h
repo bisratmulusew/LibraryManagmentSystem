@@ -5,14 +5,22 @@
 #include <vector>
 using namespace std;
 
-class book {
-public:
-    string title;
-    string genre;
-
-    book(string t, string g);
+enum Genre {
+    FICTION,
+    NONFICTION,
+    SCIENCE,
+    HISTORY,
+    OTHER,
+    GENRE_COUNT  
 };
-void BookCategoryManagment(vector<book>& books);
 
+struct Book {
+    string title;
+    Genre genre;
+};
+
+void BookCategoryManagement(const vector<Book>& books);
+string genreToString(Genre genre);
 
 #endif
+
