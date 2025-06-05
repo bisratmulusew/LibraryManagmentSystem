@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 vector<Fine> fines;
 
 void addFine(const Fine& fine) {
