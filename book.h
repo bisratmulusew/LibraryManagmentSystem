@@ -19,8 +19,9 @@ struct Book {
     int year;
     Genre genre;
 
-    void inputBookDetails();
-    string toText() const;
-};
+void inputBookDetails();
+void editBookDetails(Book& book);          
+string toText(const Book& book);         
+Book fromText(const string& line);              
 
 #endif
