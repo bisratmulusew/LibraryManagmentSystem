@@ -6,7 +6,6 @@ using namespace std;
 Book::Book(const string& title, const string& author, Genre genre)
     : title(title), author(author), status(BookStatus::Available), genre(genre) {}
 
-    
 void Book::borrow() {
     if (status == BookStatus::Available) {
         status = BookStatus::Borrowed;

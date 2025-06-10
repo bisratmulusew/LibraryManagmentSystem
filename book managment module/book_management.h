@@ -12,7 +12,6 @@ enum class BookStatus {
     Lost
 };
 
-
 enum Genre {
     FICTION,
     NONFICTION,
