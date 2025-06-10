@@ -2,26 +2,28 @@
 #define BOOK_H
 
 #include <string>
+
 using namespace std;
 
-enum Genre {
-    FICTION,
-    NON_FICTION,
-    MYSTERY,
-    SCI_FI,
-    BIOGRAPHY,
-    OTHER
+enum BookStatus {
+    AVAILABLE,
+    BORROWED,
+    LOST
 };
 
 struct Book {
+    string isbn;
     string title;
     string author;
-    int year;
-    Genre genre;
+    string genre;
+    int quantity;
+    BookStatus status;
+};
 
-void inputBookDetails();
-void editBookDetails(Book& book);          
-string toText(const Book& book);         
-Book fromText(const string& line);              
+// Conversion functions
+Book bookFromText(const string& line);
+string bookToText(const Book& book);
+string bookStatusToString(BookStatus status);
+BookStatus stringToBookStatus(const string& statusStr);
 
 #endif
