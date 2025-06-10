@@ -1,26 +1,25 @@
-#ifndef BOOK_H
-#define BOOK_H
+#include "Book.h"
+#include <fstream>
+#include <iostream>
 
-#include <string>
 using namespace std;
 
-enum Genre {
-    FICTION,
-    NON_FICTION,
-    MYSTERY,
-    SCI_FI,
-    BIOGRAPHY,
-    OTHER
-};
+void addBook(const string& filename) {
+    Book newBook;
+    inputBookDetails(newBook);  // from Book.cpp
 
-struct Book {
-    string title;
-    string author;
-    int year;
-    Genre genre;
+    ofstream file(filename, ios::app);
+    if (!file) {
+        cerr << "Error opening file for writing.\n";
+        return;
+    }
 
-    void inputBookDetails();
-    string toText() const;
-};
+    file << toText(newBook) << "\n";  // from Book.cpp
+    cout << "Book added successfully.\n";
+}
 
-#endif
+int main() {
+    string filename = "../data/books.txt";
+    addBook(filename);
+    return 0;
+}
