@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
 enum class BookStatus {
@@ -29,11 +30,11 @@ private:
 
 public:
     Book(const string& title, const string& author, Genre genre);
-
+    
     void borrow();
     void returnBook();
     void markAsLost();
-
+    
     BookStatus getStatus() const;
     string getTitle() const;
     string getAuthor() const;
@@ -43,5 +44,4 @@ public:
 void BookCategoryManagement(const vector<Book>& books);
 string genreToString(Genre genre);
 
-#endif
-
+#endif // BOOK_MANAGEMENT_H
