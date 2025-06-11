@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+// Constructor updated to include genre
 Book::Book(const string& title, const string& author, Genre genre)
     : title(title), author(author), status(BookStatus::Available), genre(genre) {}
 
@@ -67,7 +68,7 @@ void BookCategoryManagement(const vector<Book>& books) {
         bool found = false;
         for (const auto& book : books) {
             if (book.getGenre() == genre) {
-                cout << " - " << book.getTitle() << " by " << book.getAuthor() << endl;
+                cout << " - " << book.getTitle() << endl;
                 found = true;
             }
         }
