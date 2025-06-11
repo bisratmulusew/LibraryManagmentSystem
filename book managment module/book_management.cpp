@@ -1,23 +1,8 @@
 #include "book_management.h"
-<<<<<<< HEAD
-
-void book_management::deleteBook(const std::string& ISBN) {
-    auto it = std::remove_if(books.begin(), books.end(), [&](const Book& book) {
-        return book.ISBN == ISBN;
-    });
-    if (it != books.end()) {
-        books.erase(it, books.end());
-        std::cout << "Book with ISBN " << ISBN << " has been deleted." << std::endl;
-    } else {
-        std::cout << "Book not found." << std::endl;
-    }
-}
-
-// Implement the loadbooks From File and saveBooksToFile as needed
-=======
 #include <iostream>
 using namespace std;
 
+// Constructor updated to include genre
 Book::Book(const string& title, const string& author, Genre genre)
     : title(title), author(author), status(BookStatus::Available), genre(genre) {}
 
@@ -83,7 +68,7 @@ void BookCategoryManagement(const vector<Book>& books) {
         bool found = false;
         for (const auto& book : books) {
             if (book.getGenre() == genre) {
-                cout << " - " << book.getTitle() << " by " << book.getAuthor() << endl;
+                cout << " - " << book.getTitle() << endl;
                 found = true;
             }
         }
@@ -93,4 +78,3 @@ void BookCategoryManagement(const vector<Book>& books) {
     }
 }
 
->>>>>>> main

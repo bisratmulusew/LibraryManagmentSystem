@@ -1,0 +1,3 @@
+12345,Harry Potter,J.K. Rowling,Fiction,5,Available
+23456,1984,George Orwell,Fiction,0,Borrowed
+34567,Physics 101,Isaac Newton,Science,2,Available

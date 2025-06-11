@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "configurations": [
         {
             "name": "Win32",
@@ -18,3 +19,27 @@
     ],
     "version": 4
 }
+=======
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++",
+        "C:/MinGW/lib/gcc/mingw32/6.3.0/include",
+        "C:/MinGW/include",
+        "C:/MinGW/lib/gcc/mingw32/6.3.0/include-fixed"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "C:/MinGW/bin/g++.exe",
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ],
+  "version": 4
+}
+
+>>>>>>> main
