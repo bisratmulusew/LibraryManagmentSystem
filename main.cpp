@@ -4,7 +4,7 @@
 #include <fstream>
 #include <ctime>
 
-// === Include All Modules ===
+//  Include All Modules 
 #include "Admin.h"
 #include "Book.h"
 #include "Member.h"
@@ -21,7 +21,7 @@
 
 using namespace std;
 
-// === FILE PATHS ===
+//  FILE PATHS 
 const string BOOK_FILE = "../data/books.txt";
 const string MEMBER_FILE = "../data/members.txt";
 const string LOAN_FILE = "../data/loans.txt";
@@ -36,7 +36,7 @@ FineManager fineManager;
 AdminManager adminManager;
 LoanReservationModule loanModule;
 
-// === Authentication ===
+//  Authentication 
 bool login(string& loggedInUser) {
     vector<Admin> admins = loadAdmins(ADMIN_FILE);
     if (admins.empty()) {
@@ -59,7 +59,7 @@ bool login(string& loggedInUser) {
     }
 }
 
-// === Book Management Menu ===
+//  Book Management Menu 
 void bookMenu(const string& user) {
     while (true) {
         cout << "\n-- Book Management --\n";
@@ -92,7 +92,7 @@ void bookMenu(const string& user) {
     }
 }
 
-// === Member Management Menu ===
+//  Member Management Menu 
 void memberMenu(const string& user) {
     while (true) {
         cout << "\n-- Member Management --\n";
@@ -112,13 +112,13 @@ void memberMenu(const string& user) {
     }
 }
 
-// === Loan Management Menu ===
+//  Loan Management Menu 
 void loanMenu() {
     cout << "\n-- Active Loans --\n";
     listActiveLoans(LOAN_FILE);
 }
 
-// === Fine Management Menu ===
+//  Fine Management Menu 
 void fineMenu(const string& user) {
     while (true) {
         cout << "\n-- Fine Management --\n";
@@ -146,12 +146,12 @@ void fineMenu(const string& user) {
     }
 }
 
-// === Dashboard ===
+//  Dashboard 
 void dashboard() {
     showDashboard(BOOK_FILE, LOAN_FILE, FINE_FILE);
 }
 
-// === Admin Menu ===
+//  Admin Menu 
 void extendedAdminMenu(const string& currentUser) {
     int choice;
     do {
@@ -194,7 +194,7 @@ void extendedAdminMenu(const string& currentUser) {
     } while (choice != 10);
 }
 
-// === Main Menu ===
+//  Main Menu 
 int main() {
     string currentUser;
 
