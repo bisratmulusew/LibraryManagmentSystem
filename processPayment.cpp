@@ -73,17 +73,4 @@ void processFinePayment(vector<Fine>& fines) {
     }
 }
 
-int main() {
-    string filename = "../data/fines.txt";
 
-    vector<Fine> fines = loadFines(filename);
-    if (fines.empty()) {
-        cout << "No fines found.\n";
-        return 0;
-    }
-
-    processFinePayment(fines);
-    saveFines(fines, filename);
-
-    return 0;
-}

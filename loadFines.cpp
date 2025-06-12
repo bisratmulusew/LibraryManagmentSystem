@@ -22,14 +22,4 @@ vector<Fine> loadFines(const string& filename) {
     return fines;
 }
 
-int main() {
-    string filename = "../data/fines.txt";
-    vector<Fine> fines = loadFines(filename);
 
-    cout << "Loaded " << fines.size() << " fine record(s).\n";
-    for (const Fine& fine : fines) {
-        cout << fineToText(fine) << "\n";
-    }
-
-    return 0;
-}

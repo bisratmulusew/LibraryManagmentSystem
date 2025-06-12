@@ -64,7 +64,3 @@ void showDashboard(const string& bookFile, const string& loanFile, const string&
     cout << "-------------------------------------\n";
 }
 
-int main() {
-    showDashboard("../data/books.txt", "../data/loans.txt", "../data/fines.txt");
-    return 0;
-}

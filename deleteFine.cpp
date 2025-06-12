@@ -48,8 +48,3 @@ void deleteFine(const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/fines.txt";
-    deleteFine(filename);
-    return 0;
-}

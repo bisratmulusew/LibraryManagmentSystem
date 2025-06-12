@@ -46,8 +46,4 @@ void listActiveLoans(const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/loans.txt";
-    listActiveLoans(filename);
-    return 0;
-}
+

@@ -34,9 +34,4 @@ void listAllBooks(const vector<Book>& books) {
     }
 }
 
-int main() {
-    string filename = "../data/books.txt";
-    vector<Book> books = loadBooks(filename);
-    listAllBooks(books);
-    return 0;
-}
+

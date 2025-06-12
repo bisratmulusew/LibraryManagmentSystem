@@ -47,8 +47,4 @@ void deleteMember(const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/members.txt";
-    deleteMember(filename);
-    return 0;
-}
+

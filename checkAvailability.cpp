@@ -32,14 +32,4 @@ void checkBookAvailability(const vector<Book>& books, const string& isbn) {
     cout << "❌ Book with ISBN " << isbn << " not found.\n";
 }
 
-int main() {
-    string filename = "../data/books.txt";
-    vector<Book> books = loadBooks(filename);
 
-    string isbn;
-    cout << "Enter ISBN to check availability: ";
-    getline(cin, isbn);
-
-    checkBookAvailability(books, isbn);
-    return 0;
-}

@@ -18,8 +18,4 @@ void addBook(const string& filename) {
     cout << "Book added successfully.\n";
 }
 
-int main() {
-    string filename = "../data/books.txt";
-    addBook(filename);
-    return 0;
-}
+

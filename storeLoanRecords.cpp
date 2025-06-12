@@ -18,20 +18,4 @@ void saveLoans(const vector<Loan>& loans, const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/loans.txt";
 
-    // For demonstration, let's load loans first, then save them back (you can modify this as needed)
-    vector<Loan> loans;
-    ifstream file(filename);
-    string line;
-
-    while (getline(file, line)) {
-        loans.push_back(loanFromText(line));
-    }
-
-    saveLoans(loans, filename);
-
-    cout << "Loan records saved successfully.\n";
-    return 0;
-}

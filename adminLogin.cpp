@@ -34,26 +34,3 @@ bool verifyLogin(const vector<Admin>& admins, const string& username, const stri
     return false;
 }
 
-int main() {
-    string filename = "../data/admins.txt";
-    vector<Admin> admins = loadAdmins(filename);
-
-    if (admins.empty()) {
-        cout << "No admins loaded.\n";
-        return 1;
-    }
-
-    string username, password;
-    cout << "Enter Username: ";
-    getline(cin, username);
-    cout << "Enter Password: ";
-    getline(cin, password);
-
-    if (verifyLogin(admins, username, password)) {
-        cout << "Access granted.\n";
-    } else {
-        cout << "Invalid credentials.\n";
-    }
-
-    return 0;
-}

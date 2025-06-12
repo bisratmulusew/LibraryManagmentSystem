@@ -44,8 +44,3 @@ void searchMember(const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/members.txt";
-    searchMember(filename);
-    return 0;
-}

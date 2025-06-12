@@ -45,8 +45,4 @@ void searchFine(const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/fines.txt";
-    searchFine(filename);
-    return 0;
-}
+

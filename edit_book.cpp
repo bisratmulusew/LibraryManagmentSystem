@@ -67,8 +67,3 @@ void editBook(const string& filename) {
     }
 }
 
-int main() {
-    string filename = "../data/books.txt";
-    editBook(filename);
-    return 0;
-}
