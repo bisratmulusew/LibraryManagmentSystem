@@ -1,33 +1,10 @@
-<<<<<<< HEAD
-#ifndef FINEMANAGEMENT_H
-#define FINEMANAGEMENT_H
+#ifndef FINE_MANAGEMENT_H
+#define FINE_MANAGEMENT_H
 
-#include <iostream>
+#include <string>
 #include <vector>
-#include <string>
 
-struct Fine {
-    int memberID;
-    std::string ISBN;
-    double amount;
-    bool isPaid;
-};
-
-class FineManagement {
-public:
-    void processPartialPayment(int memberID, double paymentAmount);
-private:
-    std::vector<Fine> fines;
-};
-
-#endif // FINEMANAGEMENT_H
-=======
-#ifndef FINE_PAYMENT_H
-#define FINE_PAYMENT_H
-
-#include <string>
 using namespace std;
-
 
 enum FineStatus {
     PAID,
@@ -37,15 +14,23 @@ enum FineStatus {
 struct Fine {
     int fineID;
     int memberID;
+    string ISBN;       
     double amount;
     string reason;
     FineStatus status;
 };
 
-void addFine(const Fine& fine);
-void listUnpaidFines();
-void loadFinesFromFile();
-void saveFinesToFile();
+class FineManagement {
+public:
+    void addFine(const Fine& fine);
+    void listUnpaidFines() const;
+    void processPartialPayment(int memberID, double paymentAmount);
+    void loadFinesFromFile();
+    void saveFinesToFile();
+
+private:
+    vector<Fine> fines;
+};
 
 #endif 
->>>>>>> main
+

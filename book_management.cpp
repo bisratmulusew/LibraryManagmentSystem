@@ -1,23 +1,8 @@
 #include "book_management.h"
-<<<<<<< HEAD
-
-void book_management::deleteBook(const std::string& ISBN) {
-    auto it = std::remove_if(books.begin(), books.end(), [&](const Book& book) {
-        return book.ISBN == ISBN;
-    });
-    if (it != books.end()) {
-        books.erase(it, books.end());
-        std::cout << "Book with ISBN " << ISBN << " has been deleted." << std::endl;
-    } else {
-        std::cout << "Book not found." << std::endl;
-    }
-}
-
-// Implement the loadbooks From File and saveBooksToFile as needed
-=======
 #include <iostream>
 using namespace std;
 
+// Book class implementation
 Book::Book(const string& title, const string& author, Genre genre)
     : title(title), author(author), status(BookStatus::Available), genre(genre) {}
 
@@ -75,6 +60,7 @@ string genreToString(Genre genre) {
     }
 }
 
+// Book Category Management
 void BookCategoryManagement(const vector<Book>& books) {
     cout << "Books Organized by Genre:\n";
     for (int g = 0; g < GENRE_COUNT; g++) {
@@ -93,4 +79,16 @@ void BookCategoryManagement(const vector<Book>& books) {
     }
 }
 
->>>>>>> main
+// Delete book function (from other branch)
+void book_management::deleteBook(const std::string& ISBN) {
+    auto it = std::remove_if(books.begin(), books.end(), [&](const Book& book) {
+        return book.ISBN == ISBN;
+    });
+    if (it != books.end()) {
+        books.erase(it, books.end());
+        std::cout << "Book with ISBN " << ISBN << " has been deleted." << std::endl;
+    } else {
+        std::cout << "Book not found." << std::endl;
+    }
+}
+

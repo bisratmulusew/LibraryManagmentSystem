@@ -1,34 +1,9 @@
-<<<<<<< HEAD
-#ifndef LOANMANAGEMENT_H
-#define LOANMANAGEMENT_H
-
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <string>
-
-struct Loan {
-    int loanID;
-    std::string memberID;
-    std::string ISBN;
-    std::string dueDate;
-    bool isReturned;
-};
-
-class LoanManagement {
-public:
-    void loadLoanRecordsFromFile(const std::string& filename);
-private:
-    std::vector<Loan> loans;
-};
-
-#endif // LOANMANAGEMENT_H
-=======
 #ifndef LOAN_RESERVATION_H
 #define LOAN_RESERVATION_H
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
 enum LoanStatus {
@@ -39,9 +14,10 @@ enum LoanStatus {
 struct Loan {
     string loanID;
     string memberID;
-    string bookID;
+    string bookID;       
     string dueDate;
     LoanStatus status;
+    bool isReturned = false;  
 };
 
 struct Reservation {
@@ -64,5 +40,4 @@ private:
     string addDaysToDate(const string& date, int days);
 };
 
-#endif
->>>>>>> main
+#endif 

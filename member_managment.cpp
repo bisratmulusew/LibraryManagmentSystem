@@ -1,26 +1,30 @@
-<<<<<<< HEAD
 #include "MemberManagement.h"
-
-void MemberManagement::listAllMembers() {
-    std::cout << "List of Registered Members:" << std::endl;
-    for (const auto& member : members) {
-        std::cout << "ID: " << member.ID << ", Name: " << member.name 
-                  << ", Contact: " << member.contact 
-                  << ", Membership Type: " << member.membershipType << std::endl;
-    }
-}
-
-
-=======
 #include <iostream>
 #include <vector>
-#include "member_managment.h"
 
 using namespace std;
 
-vector<Member> members;
+// Utility functions
+string membershipTypeToString(MembershipType type) {
+    switch (type) {
+        case STANDARD: return "STANDARD";
+        case PREMIUM: return "PREMIUM";
+        case VIP: return "VIP";
+        default: return "UNKNOWN";
+    }
+}
 
-void addMember() {
+MembershipType stringToMembershipType(const string& str) {
+    if (str == "STANDARD") return STANDARD;
+    if (str == "PREMIUM") return PREMIUM;
+    if (str == "VIP") return VIP;
+
+    cout << "Invalid membership type entered. Defaulting to STANDARD.\n";
+    return STANDARD;
+}
+
+// MemberManagement class methods
+void MemberManagement::addMember() {
     Member newMember;
     cout << "Enter Member ID: ";
     cin >> newMember.id;
@@ -37,13 +41,12 @@ void addMember() {
     cout << "Member added successfully!\n";
 }
 
-
-void addMember(const Member& member) {
+void MemberManagement::addMember(const Member& member) {
     members.push_back(member);
     cout << "Member added successfully!\n";
 }
 
-void editMember() {
+void MemberManagement::editMember() {
     int id;
     cout << "Enter Member ID to edit: ";
     cin >> id;
@@ -65,7 +68,7 @@ void editMember() {
     cout << "Member not found!\n";
 }
 
-void editMember(int id, const string& newName, const string& newContact, MembershipType newType) {
+void MemberManagement::editMember(int id, const string& newName, const string& newContact, MembershipType newType) {
     for (auto& member : members) {
         if (member.id == id) {
             if (!newName.empty()) member.name = newName;
@@ -78,7 +81,7 @@ void editMember(int id, const string& newName, const string& newContact, Members
     cout << "Member ID not found.\n";
 }
 
-void displayAllMembers() {
+void MemberManagement::listAllMembers() const {
     cout << "\n--- Member List ---\n";
     for (const auto& member : members) {
         cout << "ID: " << member.id
@@ -88,21 +91,3 @@ void displayAllMembers() {
     }
 }
 
-string membershipTypeToString(MembershipType type) {
-    switch (type) {
-        case STANDARD: return "STANDARD";
-        case PREMIUM: return "PREMIUM";
-        case VIP: return "VIP";
-        default: return "UNKNOWN";
-    }
-}
-
-MembershipType stringToMembershipType(const string& str) {
-    if (str == "STANDARD") return STANDARD;
-    if (str == "PREMIUM") return PREMIUM;
-    if (str == "VIP") return VIP;
-
-    cout << "Invalid membership type entered. Defaulting to STANDARD.\n";
-    return STANDARD;
-}
->>>>>>> main
