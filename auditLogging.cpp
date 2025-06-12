@@ -22,8 +22,4 @@ void logAction(const string& username, const string& object, const string& id, A
     cout << "Audit log recorded.\n";
 }
 
-int main() {
-    string filename = "../data/auditlog.txt";
-    logAction("admin1", "Book", "978-XYZ-123", ADD, filename);
-    return 0;
-}
+
